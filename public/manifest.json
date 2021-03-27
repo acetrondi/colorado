@@ -1,0 +1,29 @@
+{
+  "name": "Colorado",
+  "description": "A chrome extension to help make recoloring UI easier.",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "icons": {
+    "16": "ICON16.png",
+    "48": "ICON48.png",
+    "128": "ICON128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "ICON16.png",
+      "48": "ICON48.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
